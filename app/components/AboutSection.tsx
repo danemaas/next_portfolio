@@ -69,8 +69,8 @@ const AboutSection = () => {
   };
 
   return (
-    <section className="text-white">
-      <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
+    <section id="about" className="text-white min-h-[100vh]">
+      <div className="md:grid md:grid-cols-2 gap-8 items-center pt-[12rem] px-4">
         <div className="hidden md:block relative w-[250px] h-[250px] lg:w-[400px] lg:h-[400px] mx-auto overflow-hidden">
           <Image
             src="/image2.png"

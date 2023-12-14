@@ -2,12 +2,18 @@
 
 import Image from "next/image";
 import { TypeAnimation } from "react-type-animation";
+import { motion } from "framer-motion";
 
 const HeroSection = () => {
   return (
-    <section className="text-white">
-      <div className="grid grid-cols-1 lg:grid-cols-12">
-        <div className="col-span-7 place-self-center">
+    <section id="hero" className="text-white min-h-[50vh]">
+      <div className="grid grid-cols-1 lg:grid-cols-12 pt-32">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5, ease: "easeInOut" }}
+          className="col-span-7 place-self-center"
+        >
           <h1 className="text-white text-center md:text-left mb-4 text-4xl lg:text-6xl font-extrabold -z-[1]">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-teal-500">
               Hello, I'm
@@ -47,8 +53,13 @@ const HeroSection = () => {
               </span>
             </button>
           </div>
-        </div>
-        <div className="col-span-5 mt-5 lg:mt-0">
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5, ease: "easeInOut" }}
+          className="col-span-5 mt-5 lg:mt-0"
+        >
           <div className="rounded-full w-[250px] h-[250px] lg:w-[400px] lg:h-[400px] mx-auto overflow-hidden">
             <Image
               src="/image1.png"
@@ -58,7 +69,7 @@ const HeroSection = () => {
               className="w-full h-full object-cover"
             />
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

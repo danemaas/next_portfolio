@@ -22,7 +22,7 @@ const ProjectCard = ({
   };
 
   return (
-    <div className="">
+    <div className="h-full md:h-[400px] bg-slate-800 rounded-b-xl">
       <div
         className="h-52 md:h-72 rounded-t-xl relative overflow-hidden group "
         style={divStyle}

@@ -1,6 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
+import { useInView, motion } from "framer-motion";
+
 import ProjectCard from "./ProjectCard";
 import ProjectTag from "./ProjectTag";
 
@@ -69,12 +71,20 @@ const TAGS = ["all", "web", "mobile"];
 
 const ProjectSection = () => {
   const [activeTag, setActiveTag] = useState("all");
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
   const filteredProjects = PROJECT_DATA.filter((project) =>
     project.tag.includes(activeTag)
   );
 
+  const cardVariants = {
+    initial: { y: 50, opacity: 0 },
+    animate: { y: 0, opacity: 1 },
+  };
+
   return (
-    <section className="text-white flex flex-col gap-5">
+    <section id="projects" className="text-white flex flex-col gap-5">
       <h2 className="text-4xl font-extrabold">My Projects</h2>
       <div className="flex justify-center items-center gap-5">
         {TAGS.map((tag) => (
@@ -86,18 +96,32 @@ const ProjectSection = () => {
           />
         ))}
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+      <ul
+        ref={ref}
+        className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5"
+      >
         {filteredProjects.map((project) => (
-          <ProjectCard
+          <motion.li
             key={project.id}
-            imgUrl={project.image}
-            title={project.title}
-            description={project.description}
-            projectLink={project.projectLink}
-            gitLink={project.gitLink}
-          />
+            variants={cardVariants}
+            initial="initial"
+            animate={isInView ? "animate" : "initial"}
+            transition={{
+              duration: 0.5,
+              delay: project.id * 0.3,
+              ease: "easeInOut",
+            }}
+          >
+            <ProjectCard
+              imgUrl={project.image}
+              title={project.title}
+              description={project.description}
+              projectLink={project.projectLink}
+              gitLink={project.gitLink}
+            />
+          </motion.li>
         ))}
-      </div>
+      </ul>
     </section>
   );
 };
