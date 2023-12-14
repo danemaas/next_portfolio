@@ -49,13 +49,13 @@ const HeroSection = () => {
           </div>
         </div>
         <div className="col-span-5 mt-5 lg:mt-0">
-          <div className="rounded-full w-[250px] h-[250px] lg:w-[400px] lg:h-[400px] mx-auto">
+          <div className="rounded-full w-[250px] h-[250px] lg:w-[400px] lg:h-[400px] mx-auto overflow-hidden">
             <Image
               src="/image1.png"
               alt="hero image"
               width={300}
               height={300}
-              className="w-full object-cover"
+              className="w-full h-full object-cover"
             />
           </div>
         </div>
