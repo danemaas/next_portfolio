@@ -3,8 +3,21 @@
 import Image from "next/image";
 import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
+import Link from "next/link";
+
+const url = "http://localhost:3000/Emaas_Daniel_Resume-WebDev.pdf";
 
 const HeroSection = () => {
+  const handleDownLoadCV = () => {
+    const fileName = "resume.pdf";
+    const aTag = document.createElement("a");
+    aTag.href = url;
+    aTag.setAttribute("download", fileName);
+    document.body.appendChild(aTag);
+    aTag.click();
+    aTag.remove();
+  };
+
   return (
     <section id="hero" className="text-white min-h-[50vh]">
       <div className="grid grid-cols-1 lg:grid-cols-12 pt-32">
@@ -38,13 +51,15 @@ const HeroSection = () => {
             deliver top-notch projects that guarantee high-quality outcomes.
           </p>
           <div className="flex flex-col md:flex-row items-center gap-5">
-            <button
+            <Link
+              href="#contact"
               className="w-full sm:w-max px-6 py-3 rounded-md bg-gradient-to-br 
-              from-cyan-500 via-cyan-200 to-teal-500 text-black"
+              from-cyan-500 via-cyan-200 to-teal-500 text-black text-center"
             >
               Contact me
-            </button>
+            </Link>
             <button
+              onClick={handleDownLoadCV}
               className="w-full sm:w-max px-1 py-1 rounded-md bg-gradient-to-br 
               from-cyan-500 via-cyan-200 to-teal-500"
             >

@@ -24,9 +24,11 @@ const Header = () => {
   const [navOpen, setNavOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-[9999] bg-black text-white">
+    <header className="fixed top-0 left-0 right-0 z-[999999] bg-black text-white">
       <div className="container mx-auto flex justify-between items-center px-10 py-5">
-        <Link href="#hero">DanEmaas</Link>
+        <Link href="#hero" className="text-lg font-semibold">
+          DanEmaas
+        </Link>
         {navOpen ? (
           <XSquare
             onClick={() => setNavOpen(!navOpen)}
@@ -60,7 +62,7 @@ const Header = () => {
         <nav id="navbar" className={`hidden md:block md:w-auto`}>
           <ul className="flex flex-col md:flex-row items-center gap-3">
             {navLinks.map((navLink) => (
-              <li key={navLink.title}>
+              <li key={navLink.title} className="text-lg font-semibold">
                 <NavLink link={navLink.path} title={navLink.title} />
               </li>
             ))}

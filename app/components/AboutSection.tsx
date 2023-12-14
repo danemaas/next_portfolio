@@ -2,6 +2,8 @@
 
 import { useState, useTransition } from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
+
 import TabButton from "./TabButton";
 
 const tabs = ["skills", "education", "certifications"];
@@ -71,7 +73,12 @@ const AboutSection = () => {
   return (
     <section id="about" className="text-white min-h-[100vh]">
       <div className="md:grid md:grid-cols-2 gap-8 items-center pt-[12rem] px-4">
-        <div className="hidden md:block relative w-[250px] h-[250px] lg:w-[400px] lg:h-[400px] mx-auto overflow-hidden">
+        <motion.div
+          initial={{ opacity: 0, x: -10 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5, ease: "easeInOut" }}
+          className="hidden md:block relative w-[250px] h-[250px] lg:w-[400px] lg:h-[400px] mx-auto overflow-hidden"
+        >
           <Image
             src="/image2.png"
             alt="about image"
@@ -79,8 +86,13 @@ const AboutSection = () => {
             height={300}
             className="w-full h-full object-cover"
           />
-        </div>
-        <div className="flex flex-col h-full mt-4 md:mt-0">
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, x: 0 }}
+          animate={{ opacity: 1, x: -10 }}
+          transition={{ duration: 0.5, ease: "easeInOut" }}
+          className="flex flex-col h-full mt-4 md:mt-0"
+        >
           <h2 className="text-4xl font-bold mb-4">About Me</h2>
           <p className="text-base md:text-lg text-justify">
             I am a full stack web developer with a passion for creating
@@ -105,7 +117,7 @@ const AboutSection = () => {
           <div className="mt-8">
             {TAB_DATA.find((t) => t.id === tab)?.content}
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
