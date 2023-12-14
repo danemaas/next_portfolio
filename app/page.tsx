@@ -2,6 +2,7 @@ import Header from "./components/Header";
 import AboutSection from "./components/AboutSection";
 import HeroSection from "./components/HeroSection";
 import ProjectSection from "./components/ProjectSection";
+import EmailSection from "./components/EmailSection";
 
 const page = () => {
   return (
@@ -12,6 +13,7 @@ const page = () => {
           <HeroSection />
           <AboutSection />
           <ProjectSection />
+          <EmailSection />
         </div>
       </main>
     </>

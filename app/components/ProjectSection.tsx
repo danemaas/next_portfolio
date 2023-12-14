@@ -69,6 +69,9 @@ const TAGS = ["all", "web", "mobile"];
 
 const ProjectSection = () => {
   const [activeTag, setActiveTag] = useState("all");
+  const filteredProjects = PROJECT_DATA.filter((project) =>
+    project.tag.includes(activeTag)
+  );
 
   return (
     <section className="text-white flex flex-col gap-5">
@@ -76,6 +79,7 @@ const ProjectSection = () => {
       <div className="flex justify-center items-center gap-5">
         {TAGS.map((tag) => (
           <ProjectTag
+            key={tag}
             name={tag}
             onClick={() => setActiveTag(tag)}
             isSelected={activeTag === tag}
@@ -83,18 +87,16 @@ const ProjectSection = () => {
         ))}
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-        {PROJECT_DATA.filter((project) => project.tag.includes(activeTag)).map(
-          (project) => (
-            <ProjectCard
-              key={project.id}
-              imgUrl={project.image}
-              title={project.title}
-              description={project.description}
-              projectLink={project.projectLink}
-              gitLink={project.gitLink}
-            />
-          )
-        )}
+        {filteredProjects.map((project) => (
+          <ProjectCard
+            key={project.id}
+            imgUrl={project.image}
+            title={project.title}
+            description={project.description}
+            projectLink={project.projectLink}
+            gitLink={project.gitLink}
+          />
+        ))}
       </div>
     </section>
   );
