@@ -3,6 +3,7 @@ import AboutSection from "./components/AboutSection";
 import HeroSection from "./components/HeroSection";
 import ProjectSection from "./components/ProjectSection";
 import EmailSection from "./components/EmailSection";
+import Footer from "./components/Footer";
 
 const page = () => {
   return (
@@ -16,6 +17,7 @@ const page = () => {
           <EmailSection />
         </div>
       </main>
+      <Footer />
     </>
   );
 };
