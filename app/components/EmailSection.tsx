@@ -52,7 +52,7 @@ const EmailSection = () => {
     >
       <div>
         <h2 className="text-xl font-semibold text-white my-2 flex items-center gap-2">
-          Let's Connect <RssIcon />
+          Let&apos;s Connect <RssIcon />
         </h2>
         <p className="text-slate-300 mb-4 max-w-md">
           I&apos;m currently looking for new opportunities, my inbox is always
