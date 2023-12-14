@@ -132,7 +132,7 @@ const EmailSection = () => {
             </label>
             <textarea
               name="user_message"
-              placeholder="Let's connect..."
+              placeholder="Hi there..."
               value={formData.message}
               onChange={(e) =>
                 setFormData({ ...formData, message: e.target.value })
