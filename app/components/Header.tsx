@@ -24,7 +24,7 @@ const Header = () => {
   const [navOpen, setNavOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-[9999] bg-black">
+    <header className="fixed top-0 left-0 right-0 z-[9999] bg-black text-white">
       <div className="flex justify-between items-center px-10 py-5">
         <Link href="/">DanEmaas</Link>
         {navOpen ? (

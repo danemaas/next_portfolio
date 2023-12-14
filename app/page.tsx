@@ -1,6 +1,7 @@
 import Header from "./components/Header";
 import AboutSection from "./components/AboutSection";
 import HeroSection from "./components/HeroSection";
+import ProjectSection from "./components/ProjectSection";
 
 const page = () => {
   return (
@@ -10,6 +11,7 @@ const page = () => {
         <div className="container mx-auto py-4 px-12">
           <HeroSection />
           <AboutSection />
+          <ProjectSection />
         </div>
       </main>
     </>

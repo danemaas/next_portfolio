@@ -10,7 +10,7 @@ const TAB_DATA = [
     title: "Skills",
     id: "skills",
     content: (
-      <ul>
+      <ul className="list-disc ms-5">
         <li>HTML/CSS</li>
         <li>JavaScript</li>
         <li>TypeScript</li>
@@ -26,14 +26,16 @@ const TAB_DATA = [
     title: "Education",
     id: "education",
     content: (
-      <ul>
+      <ul className="list-disc ms-5 flex flex-col gap-3">
         <li>
           <p>KodeGo Bootcamp - Full Stack Web Development</p>
-          <p>August 2023 - November 2023</p>
+          <p className="text-slate-400 text-sm">August 2023 - November 2023</p>
         </li>
         <li>
           <p>Ateneo de Naga University - BS Computer Science</p>
-          <p>July 2010 - March 2014(stopped)</p>
+          <p className="text-slate-400 text-sm">
+            July 2010 - March 2014(stopped)
+          </p>
         </li>
       </ul>
     ),
@@ -42,14 +44,14 @@ const TAB_DATA = [
     title: "Certifications",
     id: "certifications",
     content: (
-      <ul>
+      <ul className="list-disc ms-5 flex flex-col gap-3">
         <li>
           <p>Responsive Web Design - FreeCodeCamp.com</p>
-          <p>August 21, 2023</p>
+          <p className="text-slate-400 text-sm">August 21, 2023</p>
         </li>
         <li>
           <p>JavaScript Algorithm and Data Structures - FreeCodeCamp.com</p>
-          <p>November 23, 2023</p>
+          <p className="text-slate-400 text-sm">November 23, 2023</p>
         </li>
       </ul>
     ),
