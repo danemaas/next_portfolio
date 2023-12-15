@@ -1,6 +1,6 @@
 ## My Portfolio
 
-# Tech Stack Used:
+### Tech Stack Used:
  - NextJS
  - TypeScript
  - Framer-Motion
