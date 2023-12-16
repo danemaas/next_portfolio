@@ -5,7 +5,8 @@ import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-const url = "http://localhost:3000/Emaas_Daniel_Resume-WebDev.pdf";
+const url =
+  "https://coding-lemon-porfolio.vercel.app/Emaas_Daniel_Resume-WebDev.pdf";
 
 const HeroSection = () => {
   const handleDownLoadCV = () => {
